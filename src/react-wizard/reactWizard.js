@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Card from "./card/card";
-import * as styles from './styles';
+import * as styles from "./styles";
 
-const ReactWizardry = (props) => {
+const ReactWizard = (props) => {
   const wizardRef = useRef(null);
+  const childrenArray = [...props.children];
   const [wizard, setWizard] = useState({
     cards: props.children.length,
     current: 1,
@@ -40,12 +41,15 @@ const ReactWizardry = (props) => {
   return (
     <div ref={wizardRef} style={styles.mainContainer}>
       <motion.div
-        style={{...styles.scollableContainer, width: `${100 * wizard.cards}%`}}
+        style={{
+          ...styles.scollableContainer,
+          width: `${100 * wizard.cards}%`,
+        }}
         inition={{ x: wizard.from }}
         animate={{ x: wizard.to }}
-        transition={{ duration: .25 }}
+        transition={{ duration: 0.25 }}
       >
-        {props.children.map((child, index) => {
+        {childrenArray.map((child, index) => {
           return (
             <Card
               current={wizard.current}
@@ -69,4 +73,4 @@ const ReactWizardry = (props) => {
   );
 };
 
-export default ReactWizardry;
+export default ReactWizard;

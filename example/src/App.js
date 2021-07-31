@@ -2,14 +2,14 @@
 import React from "react";
 import styles from "./App.module.css";
 
-import ReactWizardry from "react-wizard/dist/index";
+import ReactWizard from "react-wizard/dist/index";
 import "react-wizard/dist/index.css";
 
 const App = () => {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.container}>
-        <ReactWizardry
+        <ReactWizard
           background="#3399ff"
           color="white"
           shadow
@@ -22,7 +22,7 @@ const App = () => {
           <h1>TWO</h1>
           <h1>THREE</h1>
           <h1>FOUR</h1>
-        </ReactWizardry>
+        </ReactWizard>
       </div>
     </div>
   );

@@ -1,3 +1,3 @@
-import ReactWizardry from './react-wizardry/reactWizardry'
+import ReactWizard from "./react-wizard/reactWizard";
 
-export default ReactWizardry
+export default ReactWizard;
